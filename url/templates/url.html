@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title > URL Shortener </title>
+  </head>
+  <body>
+  <body bgcolor="#E6E6FA">
+    <div class="container">
+        <h1 style="color:red;">URLShortener</h1>
+        <form action="/" method="post" >
+            
+            {% csrf_token %}
+            
+            {{ form.as_ul }}
+            <input type="submit" value="SHORTEN URL"><br><br>
+              {% for url in urlset %}
+
+             {{ url.original_url }}:<pre>
+->><i><n>deepakv.pythonanywhere.com/{{ url.shortened_url }} </i></b></pre> <br>
+
+            {% endfor %}
+            
+        </form>
+    </div>
+  </body>
+</html>
